@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Assess whether an AI project idea is ready for a pilot or implementation."
+    >
+    <title>AI Project Readiness Check</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="card" aria-labelledby="page-title">
+        <header class="intro">
+          <p class="eyebrow">AI planning tool</p>
+          <h1 id="page-title">AI Project Readiness Check</h1>
+          <p class="lede">
+            Answer six quick questions to see whether your idea needs more preparation,
+            a small pilot, or is ready to move into implementation.
+          </p>
+        </header>
+
+        <form id="readiness-form">
+          <fieldset>
+            <legend>1. Is there a clearly defined business problem?</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="problem" value="yes" required> Yes</label>
+              <label><input type="radio" name="problem" value="no"> No</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Is there a measurable success metric?</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="metric" value="yes" required> Yes</label>
+              <label><input type="radio" name="metric" value="no"> No</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Is the required data available?</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="data" value="yes" required> Yes</label>
+              <label><input type="radio" name="data" value="no"> No</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Is there a person responsible for the outcome?</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="owner" value="yes" required> Yes</label>
+              <label><input type="radio" name="owner" value="no"> No</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>5. Can a human review or override the AI output?</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="oversight" value="yes" required> Yes</label>
+              <label><input type="radio" name="oversight" value="no"> No</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>6. Is there a realistic way to test the idea on a small scale first?</legend>
+            <div class="choice-group">
+              <label><input type="radio" name="pilot" value="yes" required> Yes</label>
+              <label><input type="radio" name="pilot" value="no"> No</label>
+            </div>
+          </fieldset>
+
+          <button class="primary-button" type="submit">See my result</button>
+        </form>
+
+        <section id="result" class="result" aria-labelledby="result-title" aria-live="polite" hidden>
+          <p id="result-score" class="result-score"></p>
+          <h2 id="result-title" tabindex="-1"></h2>
+          <p id="result-explanation"></p>
+
+          <div class="result-detail">
+            <h3 id="readiness-detail-title">Most important missing items</h3>
+            <ul id="missing-items"></ul>
+            <p id="readiness-status" hidden>All six readiness foundations are covered.</p>
+          </div>
+
+          <div class="result-detail">
+            <h3>Recommended next step</h3>
+            <p id="next-step"></p>
+          </div>
+
+          <button id="retake-button" class="secondary-button" type="button">Retake check</button>
+        </section>
+      </section>
+    </main>
+
+    <footer>Prototype created for the Prommer application task.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
